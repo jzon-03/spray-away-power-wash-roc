@@ -1,18 +1,17 @@
 <section class="page contact" aria-labelledby="contact-title">
 	<div class="contact-hero">
 		<div>
-			<h1 id="contact-title">Request your power wash quote</h1>
+			<h1 id="contact-title">{{ pageTitle() }}</h1>
 			<p class="lead">
-				Tell us about your surface, and we will respond within one business day. No spam,
-				just a clear price range and available slots.
+				{{ pageDescription() }}
 			</p>
 		</div>
 		<div class="surface contact-highlight" aria-label="What to expect">
 			<h2>What to expect</h2>
 			<ul>
-				<li>On-site assessment and moisture-safe detergent plan</li>
-				<li>Transparent pricing with before and after photos</li>
-				<li>Respectful crew with property protection protocol</li>
+				@for (item of whatToExpect(); track item) {
+					<li>{{ item }}</li>
+				}
 			</ul>
 		</div>
 	</div>
@@ -120,20 +119,14 @@
 		</form>
 
 		<aside class="surface contact-side" aria-labelledby="contact-side-title">
-			<h2 id="contact-side-title">Call or text now</h2>
-			<p class="lead">Need a same-week clean? Reach out directly for priority slots.</p>
-			<div class="contact-card">
-				<p class="contact-label">Phone</p>
-				<p class="contact-value">585-313-4162</p>
-			</div>
-			<div class="contact-card">
-				<p class="contact-label">Email</p>
-				<p class="contact-value">hello@sprayawayroc.com</p>
-			</div>
-			<div class="contact-card">
-				<p class="contact-label">Location</p>
-				<p class="contact-value">Service address shared after booking.</p>
-			</div>
+			<h2 id="contact-side-title">{{ contactSideTitle() }}</h2>
+			<p class="lead">{{ contactSideLead() }}</p>
+			@for (card of contactCards(); track card.label) {
+				<div class="contact-card">
+					<p class="contact-label">{{ card.label }}</p>
+					<p class="contact-value">{{ card.value }}</p>
+				</div>
+			}
 		</aside>
 	</div>
 </section>
