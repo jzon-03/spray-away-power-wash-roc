@@ -61,7 +61,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/spray-away-power-wash-roc/",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
