@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    title: 'Spray Away Power Wash',
+    title: 'Spray Away Power Washing',
     loadComponent: () =>
       import('./landing/landing.component').then(m => m.LandingComponent)
   },
