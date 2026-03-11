@@ -1,0 +1,97 @@
+<section class="page landing" aria-labelledby="hero-title">
+	<div class="hero">
+		<div class="hero-content">
+			<p class="eyebrow">Rochester NY power washing</p>
+			<h1 id="hero-title">Restore curb appeal in a single visit</h1>
+			<p class="lead">
+				Spray Away brings soft wash and pressure wash expertise to homes and storefronts
+				across Monroe County. We lift grime, algae, and road film without damaging your
+				surfaces.
+			</p>
+			<div class="hero-actions">
+				<a class="btn primary" routerLink="/contact">Get a free quote</a>
+				<a class="btn ghost" routerLink="/dashboard">View service dashboard</a>
+			</div>
+			<div class="metrics" role="list">
+				@for (metric of metrics(); track metric.label) {
+					<div class="metric" role="listitem">
+						<span class="metric-value">{{ metric.value }}</span>
+						<span class="metric-label">{{ metric.label }}</span>
+					</div>
+				}
+			</div>
+		</div>
+		<div class="hero-panel surface" aria-label="Next available appointments">
+			<h2 class="panel-title">Next open slots</h2>
+			<ul class="slot-list">
+				<li>
+					<span class="slot-day">Tue</span>
+					<span class="slot-time">9:00 AM - Exterior wash</span>
+				</li>
+				<li>
+					<span class="slot-day">Thu</span>
+					<span class="slot-time">1:30 PM - Driveway clean</span>
+				</li>
+				<li>
+					<span class="slot-day">Sat</span>
+					<span class="slot-time">10:00 AM - Patio refresh</span>
+				</li>
+			</ul>
+			<p class="panel-note">All slots include a pre-inspection and post-rinse walk-through.</p>
+		</div>
+	</div>
+
+	<section class="surface" aria-labelledby="services-title">
+		<h2 id="services-title" class="section-title">Signature services</h2>
+		<div class="grid service-grid">
+			@for (service of services(); track service.title) {
+				<article class="service-card">
+					<h3>{{ service.title }}</h3>
+					<p>{{ service.copy }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section class="process" aria-labelledby="process-title">
+		<div>
+			<h2 id="process-title" class="section-title">Our clean method</h2>
+			<p class="lead">
+				Every job starts with surface testing, then we choose the right blend of water
+				pressure and eco-safe detergents.
+			</p>
+		</div>
+		<div class="grid process-grid">
+			@for (step of steps(); track step.title) {
+				<div class="process-card">
+					<h3>{{ step.title }}</h3>
+					<p>{{ step.copy }}</p>
+				</div>
+			}
+		</div>
+	</section>
+
+	<section class="surface" aria-labelledby="reviews-title">
+		<div class="reviews-header">
+			<h2 id="reviews-title" class="section-title">Neighbors trust Spray Away</h2>
+			<p class="lead">Real feedback from the last two weeks of service calls.</p>
+		</div>
+		<div class="grid review-grid">
+			@for (review of reviews(); track review.name) {
+				<figure class="review-card">
+					<blockquote>"{{ review.quote }}"</blockquote>
+					<figcaption>{{ review.name }}</figcaption>
+				</figure>
+			}
+		</div>
+	</section>
+
+	<section class="service-area" aria-labelledby="area-title">
+		<h2 id="area-title" class="section-title">Service area</h2>
+		<div class="chip-group" role="list">
+			@for (area of serviceAreas(); track area) {
+				<span class="chip" role="listitem">{{ area }}</span>
+			}
+		</div>
+	</section>
+</section>

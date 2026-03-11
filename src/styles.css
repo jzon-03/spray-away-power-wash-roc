@@ -1,1 +1,115 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+:root {
+	--color-ink: #0c141c;
+	--color-slate: #1e2b3a;
+	--color-sand: #f2e5cc;
+	--color-mist: #eef4f6;
+	--color-splash: #2b8c7c;
+	--color-wave: #1b6fa8;
+	--color-ember: #d97706;
+	--color-foam: #cfe7f0;
+
+	--font-display: 'Bebas Neue', 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+	--font-body: 'Source Sans 3', 'Segoe UI', Tahoma, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: var(--font-body);
+	color: var(--color-ink);
+	background:
+		radial-gradient(circle at top left, rgba(43, 140, 124, 0.18), transparent 55%),
+		radial-gradient(circle at 20% 80%, rgba(27, 111, 168, 0.16), transparent 45%),
+		linear-gradient(140deg, #f9f4e8, #e7f0f4 55%, #f9f4e8 100%);
+	min-height: 100vh;
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.page {
+	padding: clamp(2rem, 5vw, 5rem) clamp(1.25rem, 4vw, 4rem);
+}
+
+.section-title {
+	font-family: var(--font-display);
+	font-size: clamp(2rem, 4vw, 3rem);
+	letter-spacing: 0.08rem;
+	text-transform: uppercase;
+	margin: 0 0 1.5rem;
+}
+
+.lead {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	max-width: 38rem;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.85rem 1.6rem;
+	border-radius: 999px;
+	border: 2px solid transparent;
+	font-weight: 700;
+	letter-spacing: 0.03rem;
+	text-decoration: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary {
+	background: linear-gradient(120deg, var(--color-ember), #f59e0b);
+	color: #1f1f1f;
+	box-shadow: 0 12px 24px rgba(217, 119, 6, 0.3);
+}
+
+.btn.ghost {
+	border-color: rgba(12, 20, 28, 0.25);
+	color: var(--color-ink);
+	background: rgba(255, 255, 255, 0.7);
+}
+
+.btn:hover {
+	transform: translateY(-1px);
+}
+
+.btn:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+	outline: 3px solid rgba(43, 140, 124, 0.7);
+	outline-offset: 2px;
+}
+
+.surface {
+	background: rgba(255, 255, 255, 0.85);
+	border-radius: 1.25rem;
+	padding: clamp(1.25rem, 3vw, 2.5rem);
+	box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.grid {
+	display: grid;
+	gap: 1.5rem;
+}
+
+@media (max-width: 700px) {
+	.btn {
+		width: 100%;
+	}
+}

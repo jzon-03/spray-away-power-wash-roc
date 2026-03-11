@@ -1,0 +1,178 @@
+.dashboard {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.dashboard-header {
+	display: grid;
+	grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.7fr);
+	gap: clamp(1.5rem, 4vw, 3rem);
+	align-items: center;
+}
+
+.dashboard-header h1 {
+	font-family: var(--font-display);
+	font-size: clamp(2.3rem, 5vw, 3.4rem);
+	letter-spacing: 0.08rem;
+	text-transform: uppercase;
+	margin: 0 0 1rem;
+}
+
+.highlight {
+	background: linear-gradient(140deg, rgba(27, 111, 168, 0.15), rgba(43, 140, 124, 0.2));
+}
+
+.highlight-label {
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	font-size: 0.75rem;
+	margin: 0 0 0.4rem;
+	color: var(--color-slate);
+}
+
+.highlight-value {
+	margin: 0 0 0.2rem;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.highlight-note {
+	margin: 0;
+	color: var(--color-slate);
+}
+
+.metric-grid {
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.metric-card {
+	display: grid;
+	gap: 0.35rem;
+}
+
+.metric-label {
+	text-transform: uppercase;
+	letter-spacing: 0.16rem;
+	font-size: 0.7rem;
+	color: var(--color-slate);
+	margin: 0;
+}
+
+.metric-value {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.dashboard-body {
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.route h2,
+.dashboard-body h2 {
+	margin: 0 0 1rem;
+	font-family: var(--font-display);
+	text-transform: uppercase;
+	letter-spacing: 0.08rem;
+}
+
+.route-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	gap: 0.9rem;
+}
+
+.route-list li {
+	display: grid;
+	grid-template-columns: 4.5rem 1fr;
+	gap: 1rem;
+	padding: 0.75rem 0.9rem;
+	border-radius: 1rem;
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.route-time {
+	font-weight: 700;
+	color: var(--color-wave);
+}
+
+.route-location {
+	margin: 0 0 0.2rem;
+	font-weight: 600;
+}
+
+.route-task {
+	margin: 0;
+	color: var(--color-slate);
+}
+
+.jobs-table {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.table-row {
+	display: grid;
+	grid-template-columns: 1.4fr 1fr 0.8fr;
+	gap: 0.75rem;
+	padding: 0.75rem 0.9rem;
+	border-radius: 0.9rem;
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.table-head {
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	font-size: 0.7rem;
+	background: rgba(27, 111, 168, 0.12);
+}
+
+.crew-list {
+	display: grid;
+	gap: 1rem;
+}
+
+.crew-card {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.9rem 1rem;
+	background: rgba(12, 20, 28, 0.9);
+	color: var(--color-mist);
+	border-radius: 1rem;
+}
+
+.crew-name {
+	margin: 0 0 0.2rem;
+	font-weight: 700;
+}
+
+.crew-state,
+.crew-note {
+	margin: 0;
+	color: var(--color-sand);
+}
+
+@media (max-width: 900px) {
+	.dashboard-header {
+		grid-template-columns: 1fr;
+	}
+
+	.route-list li {
+		grid-template-columns: 1fr;
+	}
+
+	.table-row {
+		grid-template-columns: 1fr;
+	}
+
+	.crew-card {
+		flex-direction: column;
+	}
+}

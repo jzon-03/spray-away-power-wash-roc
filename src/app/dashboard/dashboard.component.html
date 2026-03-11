@@ -1,0 +1,72 @@
+<section class="page dashboard" aria-labelledby="dashboard-title">
+	<header class="dashboard-header">
+		<div>
+			<h1 id="dashboard-title">Operations dashboard</h1>
+			<p class="lead">Live overview of crews, routes, and client status updates.</p>
+		</div>
+		<div class="surface highlight">
+			<p class="highlight-label">Weather watch</p>
+			<p class="highlight-value">Clear skies until 6:00 PM</p>
+			<p class="highlight-note">Ideal conditions for soft wash and seal prep.</p>
+		</div>
+	</header>
+
+	<section class="grid metric-grid" aria-label="Key metrics">
+		@for (metric of metrics(); track metric.label) {
+			<div class="surface metric-card">
+				<p class="metric-label">{{ metric.label }}</p>
+				<p class="metric-value">{{ metric.value }}</p>
+			</div>
+		}
+	</section>
+
+	<section class="grid dashboard-body">
+		<article class="surface route" aria-labelledby="route-title">
+			<h2 id="route-title">Today route plan</h2>
+			<ul class="route-list">
+				@for (stop of todaysRoute(); track stop.time) {
+					<li>
+						<span class="route-time">{{ stop.time }}</span>
+						<div>
+							<p class="route-location">{{ stop.location }}</p>
+							<p class="route-task">{{ stop.task }}</p>
+						</div>
+					</li>
+				}
+			</ul>
+		</article>
+
+		<article class="surface" aria-labelledby="jobs-title">
+			<h2 id="jobs-title">Recent jobs</h2>
+			<div class="jobs-table" role="table" aria-label="Recent service jobs">
+				<div class="table-row table-head" role="row">
+					<span role="columnheader">Address</span>
+					<span role="columnheader">Service</span>
+					<span role="columnheader">Status</span>
+				</div>
+				@for (job of recentJobs(); track job.address) {
+					<div class="table-row" role="row">
+						<span role="cell">{{ job.address }}</span>
+						<span role="cell">{{ job.service }}</span>
+						<span role="cell">{{ job.status }}</span>
+					</div>
+				}
+			</div>
+		</article>
+
+		<article class="surface" aria-labelledby="crew-title">
+			<h2 id="crew-title">Crew status</h2>
+			<div class="crew-list">
+				@for (crew of crewStatus(); track crew.name) {
+					<div class="crew-card">
+						<div>
+							<p class="crew-name">{{ crew.name }}</p>
+							<p class="crew-state">{{ crew.state }}</p>
+						</div>
+						<p class="crew-note">{{ crew.note }}</p>
+					</div>
+				}
+			</div>
+		</article>
+	</section>
+</section>

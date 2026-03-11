@@ -1,0 +1,153 @@
+.contact {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.contact-hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+	gap: clamp(1.5rem, 4vw, 3rem);
+	align-items: center;
+}
+
+.contact-hero h1 {
+	font-family: var(--font-display);
+	font-size: clamp(2.4rem, 5vw, 3.5rem);
+	letter-spacing: 0.08rem;
+	text-transform: uppercase;
+	margin: 0 0 1rem;
+}
+
+.contact-highlight h2 {
+	margin: 0 0 0.75rem;
+	font-family: var(--font-display);
+	text-transform: uppercase;
+	letter-spacing: 0.08rem;
+}
+
+.contact-highlight ul {
+	margin: 0;
+	padding-left: 1.2rem;
+	display: grid;
+	gap: 0.6rem;
+}
+
+.contact-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.7fr);
+	gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.form-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.2rem;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.field.full {
+	grid-column: span 2;
+}
+
+label {
+	font-weight: 700;
+}
+
+input,
+select,
+textarea {
+	border-radius: 0.9rem;
+	border: 1px solid rgba(15, 23, 42, 0.15);
+	padding: 0.75rem 0.9rem;
+	font-size: 1rem;
+	font-family: var(--font-body);
+	background: rgba(255, 255, 255, 0.9);
+}
+
+textarea {
+	resize: vertical;
+	min-height: 120px;
+}
+
+.field-error {
+	margin: 0;
+	color: #b42318;
+	font-size: 0.85rem;
+}
+
+.form-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 1.5rem;
+}
+
+.form-actions p {
+	margin: 0;
+	color: var(--color-slate);
+}
+
+.form-status {
+	margin-top: 1rem;
+}
+
+.success {
+	margin: 0;
+	color: var(--color-splash);
+	font-weight: 600;
+}
+
+.contact-side {
+	display: grid;
+	gap: 1.2rem;
+	height: fit-content;
+}
+
+.contact-side h2 {
+	margin: 0;
+	font-family: var(--font-display);
+	text-transform: uppercase;
+	letter-spacing: 0.08rem;
+}
+
+.contact-card {
+	padding: 0.9rem 1rem;
+	background: rgba(12, 20, 28, 0.92);
+	color: var(--color-mist);
+	border-radius: 1rem;
+}
+
+.contact-label {
+	margin: 0 0 0.3rem;
+	text-transform: uppercase;
+	letter-spacing: 0.12rem;
+	font-size: 0.7rem;
+}
+
+.contact-value {
+	margin: 0;
+	font-size: 1.05rem;
+	font-weight: 600;
+}
+
+@media (max-width: 950px) {
+	.contact-hero,
+	.contact-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.form-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.field.full {
+		grid-column: span 1;
+	}
+}
